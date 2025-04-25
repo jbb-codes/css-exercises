@@ -17,8 +17,6 @@
   padding: 0;
   margin: 0;
   background-color: rgb(99, 97, 97);
-
-  display: none;
 }
 
 ul.dropdown-menu li:hover {
@@ -29,4 +27,37 @@ ul.dropdown-menu li:hover {
   display: block;
 }
 
+.collapse {
+  animation: collapse 250ms ease-in;
+  transform-origin: top;
+  animation-fill-mode: forwards;
+}
 
+.visible {
+  animation: expand 500ms ease-out;
+  transform-origin: top;
+}
+
+@keyframes expand {
+  0% {
+    transform: scaleY(0);
+  }
+  50% {
+    transform: scaleY(1.1);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes collapse {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.1);
+  }
+  100% {
+    transform: scaleY(0);
+  }
+}
